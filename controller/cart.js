@@ -44,7 +44,7 @@ export const listCart = (req, res) => {
 export const updateCartProduct = (req, res) => {
     const { user_id, product_id, quantity } = req.body;
 
-    // Update the quantity of the specified product in the cart
+    
     db.query('UPDATE CartItems SET quantity = ? WHERE user_id = ? AND product_id = ?', [quantity, user_id, product_id], (err, results) => {
         if (err) {
             console.error("Error updating cart product:", err);
@@ -62,10 +62,10 @@ export const removeFromCart = async (req, res) => {
     try {
         const { user_id, cart_item_id } = req.body;
 
-        // Construct the SQL query to remove the item from the cart
+        
         const q = "DELETE FROM CartItems WHERE user_id = ? AND cart_item_id = ?";
         
-        // Execute the query
+       
         db.query(q, [user_id, cart_item_id], (err, result) => {
             if (err) {
                 return res.status(500).json(err);
