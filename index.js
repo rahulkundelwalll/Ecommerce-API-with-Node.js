@@ -7,6 +7,8 @@ import productRoutes from './routes/product.js'
 import cartRoutes from './routes/cart.js'
 import orderRoutes from './routes/order.js'
 import morgan from "morgan";
+import dotenv from 'dotenv'
+dotenv.config()
 
 const app = express();
 app.use(express.json());
