@@ -17,8 +17,8 @@ export const addToCart = (req, res) => {
 
 
 export const listCart = (req, res) => {
-    const { user_id } = req.query; 
-
+    const  user_id  = req.params.id; 
+    console.log(user_id);
     
     db.query(`
         SELECT 
